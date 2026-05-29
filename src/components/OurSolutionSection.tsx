@@ -356,10 +356,10 @@ export const OurSolutionSection = () => {
                 filter: "drop-shadow(rgba(0, 0, 0, 0.22) 0px 10px 24px)",
               }}
               srcSet="
-              /_next/image?url=%2Fimages%2Fideal-factory-icon.png&amp;w=96&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL  1x,
-              /_next/image?url=%2Fimages%2Fideal-factory-icon.png&amp;w=256&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL 2x
+              /images/Fideal-factory-icon.png?w=96&q=75&dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL1x,
+              /images/Fideal-factory-icon.png?w=256&q=75&dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL2x
             "
-              src="https://www.idealhomeuae.com/_next/image?url=%2Fimages%2Fideal-factory-icon.png&amp;w=256&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL"
+              src="/images/Fideal-factory-icon.png?w=256&q=75&dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL"
             />
             <h2
               style={{
@@ -439,10 +439,10 @@ export const OurSolutionSection = () => {
                   width: "auto",
                 }}
                 srcSet="
-                /_next/image?url=%2Fimages%2Fideal-factory-icon.png&amp;w=96&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL  1x,
-                /_next/image?url=%2Fimages%2Fideal-factory-icon.png&amp;w=256&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL 2x
+                /images/Fideal-factory-icon.png?w=96&q=75&dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL  1x,
+                /images/Fideal-factory-icon.png?w=256&q=75&dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL 2x
               "
-                src="https://www.idealhomeuae.com/_next/image?url=%2Fimages%2Fideal-factory-icon.png&amp;w=256&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL"
+                src="https://www.idealhomeuae.com/images/Fideal-factory-icon.png?w=256&q=75&dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL"
               />
             </div>
             <div
@@ -517,24 +517,7 @@ export const OurSolutionSection = () => {
                     color: "transparent",
                   }}
                   sizes="(max-width: 1024px) calc(100vw - 2.5rem), 600px"
-                  srcSet="
-                  /_next/image?url=%2Fimages%2Fhome%2Fkitchen-product-image.webp&amp;w=32&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL     32w,
-                  /_next/image?url=%2Fimages%2Fhome%2Fkitchen-product-image.webp&amp;w=48&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL     48w,
-                  /_next/image?url=%2Fimages%2Fhome%2Fkitchen-product-image.webp&amp;w=64&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL     64w,
-                  /_next/image?url=%2Fimages%2Fhome%2Fkitchen-product-image.webp&amp;w=96&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL     96w,
-                  /_next/image?url=%2Fimages%2Fhome%2Fkitchen-product-image.webp&amp;w=128&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL   128w,
-                  /_next/image?url=%2Fimages%2Fhome%2Fkitchen-product-image.webp&amp;w=256&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL   256w,
-                  /_next/image?url=%2Fimages%2Fhome%2Fkitchen-product-image.webp&amp;w=384&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL   384w,
-                  /_next/image?url=%2Fimages%2Fhome%2Fkitchen-product-image.webp&amp;w=640&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL   640w,
-                  /_next/image?url=%2Fimages%2Fhome%2Fkitchen-product-image.webp&amp;w=750&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL   750w,
-                  /_next/image?url=%2Fimages%2Fhome%2Fkitchen-product-image.webp&amp;w=828&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL   828w,
-                  /_next/image?url=%2Fimages%2Fhome%2Fkitchen-product-image.webp&amp;w=1080&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL 1080w,
-                  /_next/image?url=%2Fimages%2Fhome%2Fkitchen-product-image.webp&amp;w=1200&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL 1200w,
-                  /_next/image?url=%2Fimages%2Fhome%2Fkitchen-product-image.webp&amp;w=1920&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL 1920w,
-                  /_next/image?url=%2Fimages%2Fhome%2Fkitchen-product-image.webp&amp;w=2048&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL 2048w,
-                  /_next/image?url=%2Fimages%2Fhome%2Fkitchen-product-image.webp&amp;w=3840&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL 3840w
-                "
-                  src="/_next/image?url=%2Fimages%2Fhome%2Fkitchen-product-image.webp&amp;w=3840&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL"
+                  src="/images/home/kitchen-product-image.webp"
                 />
                 <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-black/25 via-transparent to-transparent"></div>
                 <div className="absolute left-[26px] top-[26px] flex h-14 w-14 items-center justify-center rounded-[10px] bg-white">
@@ -550,6 +533,7 @@ export const OurSolutionSection = () => {
                     strokeLinejoin="round"
                     className="lucide lucide-chef-hat h-[34px] w-[34px] text-primary"
                     aria-hidden="true"
+                    color="rgb(87 183 192)"
                   >
                     <path d="M17 21a1 1 0 0 0 1-1v-5.35c0-.457.316-.844.727-1.041a4 4 0 0 0-2.134-7.589 5 5 0 0 0-9.186 0 4 4 0 0 0-2.134 7.588c.411.198.727.585.727 1.041V20a1 1 0 0 0 1 1Z"></path>
                     <path d="M6 17h12"></path>
@@ -625,7 +609,7 @@ export const OurSolutionSection = () => {
                 style={{ height: "clamp(220px, 32vh, 380px)" }}
               >
                 <img
-                  alt="Wardrobes &amp; Closets"
+                  alt="Wardrobes & Closets"
                   loading="lazy"
                   decoding="async"
                   data-nimg="fill"
@@ -641,24 +625,24 @@ export const OurSolutionSection = () => {
                     color: "transparent",
                   }}
                   sizes="(max-width: 1024px) calc(100vw - 2.5rem), 600px"
-                  srcSet="
-                  /_next/image?url=%2Fimages%2Fhome%2Fwardrobe-product-image.webp&amp;w=32&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL     32w,
-                  /_next/image?url=%2Fimages%2Fhome%2Fwardrobe-product-image.webp&amp;w=48&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL     48w,
-                  /_next/image?url=%2Fimages%2Fhome%2Fwardrobe-product-image.webp&amp;w=64&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL     64w,
-                  /_next/image?url=%2Fimages%2Fhome%2Fwardrobe-product-image.webp&amp;w=96&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL     96w,
-                  /_next/image?url=%2Fimages%2Fhome%2Fwardrobe-product-image.webp&amp;w=128&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL   128w,
-                  /_next/image?url=%2Fimages%2Fhome%2Fwardrobe-product-image.webp&amp;w=256&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL   256w,
-                  /_next/image?url=%2Fimages%2Fhome%2Fwardrobe-product-image.webp&amp;w=384&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL   384w,
-                  /_next/image?url=%2Fimages%2Fhome%2Fwardrobe-product-image.webp&amp;w=640&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL   640w,
-                  /_next/image?url=%2Fimages%2Fhome%2Fwardrobe-product-image.webp&amp;w=750&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL   750w,
-                  /_next/image?url=%2Fimages%2Fhome%2Fwardrobe-product-image.webp&amp;w=828&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL   828w,
-                  /_next/image?url=%2Fimages%2Fhome%2Fwardrobe-product-image.webp&amp;w=1080&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL 1080w,
-                  /_next/image?url=%2Fimages%2Fhome%2Fwardrobe-product-image.webp&amp;w=1200&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL 1200w,
-                  /_next/image?url=%2Fimages%2Fhome%2Fwardrobe-product-image.webp&amp;w=1920&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL 1920w,
-                  /_next/image?url=%2Fimages%2Fhome%2Fwardrobe-product-image.webp&amp;w=2048&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL 2048w,
-                  /_next/image?url=%2Fimages%2Fhome%2Fwardrobe-product-image.webp&amp;w=3840&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL 3840w
-                "
-                  src="/_next/image?url=%2Fimages%2Fhome%2Fwardrobe-product-image.webp&amp;w=3840&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL"
+                  //   srcSet="
+                  //   /images/Fhome%2Fwardrobe-product-image.webp&w=32&q=75&dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL     32w,
+                  //   /images/Fhome%2Fwardrobe-product-image.webp&w=48&q=75&dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL     48w,
+                  //   /images/Fhome%2Fwardrobe-product-image.webp&w=64&q=75&dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL     64w,
+                  //   /images/Fhome%2Fwardrobe-product-image.webp&w=96&q=75&dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL     96w,
+                  //   /images/Fhome%2Fwardrobe-product-image.webp&w=128&q=75&dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL   128w,
+                  //   /images/Fhome%2Fwardrobe-product-image.webp&w=256&q=75&dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL   256w,
+                  //   /images/Fhome%2Fwardrobe-product-image.webp&w=384&q=75&dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL   384w,
+                  //   /images/Fhome%2Fwardrobe-product-image.webp&w=640&q=75&dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL   640w,
+                  //   /images/Fhome%2Fwardrobe-product-image.webp&w=750&q=75&dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL   750w,
+                  //   /images/Fhome%2Fwardrobe-product-image.webp&w=828&q=75&dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL   828w,
+                  //   /images/Fhome%2Fwardrobe-product-image.webp&w=1080&q=75&dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL 1080w,
+                  //   /images/Fhome%2Fwardrobe-product-image.webp&w=1200&q=75&dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL 1200w,
+                  //   /images/Fhome%2Fwardrobe-product-image.webp&w=1920&q=75&dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL 1920w,
+                  //   /images/Fhome%2Fwardrobe-product-image.webp&w=2048&q=75&dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL 2048w,
+                  //   /images/Fhome%2Fwardrobe-product-image.webp&w=3840&q=75&dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL 3840w
+                  // "
+                  src="/images/home/wardrobe-product-image.webp"
                 />
                 <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-black/25 via-transparent to-transparent"></div>
                 <div className="absolute left-[26px] top-[26px] flex h-14 w-14 items-center justify-center rounded-[10px] bg-white">
@@ -674,6 +658,7 @@ export const OurSolutionSection = () => {
                     strokeLinejoin="round"
                     className="lucide lucide-shirt h-[34px] w-[34px] text-primary"
                     aria-hidden="true"
+                    color="rgb(87 183 192)"
                   >
                     <path d="M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z"></path>
                   </svg>
@@ -691,7 +676,7 @@ export const OurSolutionSection = () => {
                       margin: 0,
                     }}
                   >
-                    Wardrobes &amp; Closets
+                    Wardrobes & Closets
                   </h4>
                   <p
                     style={{
@@ -709,7 +694,7 @@ export const OurSolutionSection = () => {
                 <div className="mt-auto flex justify-end">
                   <a
                     className="flex h-10 w-10 items-center justify-center rounded-[10px] bg-primary transition-all duration-300 group-hover:bg-primary-hover group-hover:shadow-[0_0_20px_rgb(var(--primary)_/_0.4)]"
-                    aria-label="Learn more about Wardrobes &amp; Closets"
+                    aria-label="Learn more about Wardrobes & Closets"
                     href="/service/wardrobes"
                   >
                     <svg
@@ -764,24 +749,24 @@ export const OurSolutionSection = () => {
                     color: "transparent",
                   }}
                   sizes="(max-width: 1024px) calc(100vw - 2.5rem), 600px"
-                  srcSet="
-                  /_next/image?url=%2Fimages%2Fhome%2Fdoor-product-image.webp&amp;w=32&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL     32w,
-                  /_next/image?url=%2Fimages%2Fhome%2Fdoor-product-image.webp&amp;w=48&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL     48w,
-                  /_next/image?url=%2Fimages%2Fhome%2Fdoor-product-image.webp&amp;w=64&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL     64w,
-                  /_next/image?url=%2Fimages%2Fhome%2Fdoor-product-image.webp&amp;w=96&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL     96w,
-                  /_next/image?url=%2Fimages%2Fhome%2Fdoor-product-image.webp&amp;w=128&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL   128w,
-                  /_next/image?url=%2Fimages%2Fhome%2Fdoor-product-image.webp&amp;w=256&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL   256w,
-                  /_next/image?url=%2Fimages%2Fhome%2Fdoor-product-image.webp&amp;w=384&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL   384w,
-                  /_next/image?url=%2Fimages%2Fhome%2Fdoor-product-image.webp&amp;w=640&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL   640w,
-                  /_next/image?url=%2Fimages%2Fhome%2Fdoor-product-image.webp&amp;w=750&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL   750w,
-                  /_next/image?url=%2Fimages%2Fhome%2Fdoor-product-image.webp&amp;w=828&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL   828w,
-                  /_next/image?url=%2Fimages%2Fhome%2Fdoor-product-image.webp&amp;w=1080&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL 1080w,
-                  /_next/image?url=%2Fimages%2Fhome%2Fdoor-product-image.webp&amp;w=1200&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL 1200w,
-                  /_next/image?url=%2Fimages%2Fhome%2Fdoor-product-image.webp&amp;w=1920&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL 1920w,
-                  /_next/image?url=%2Fimages%2Fhome%2Fdoor-product-image.webp&amp;w=2048&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL 2048w,
-                  /_next/image?url=%2Fimages%2Fhome%2Fdoor-product-image.webp&amp;w=3840&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL 3840w
-                "
-                  src="/_next/image?url=%2Fimages%2Fhome%2Fdoor-product-image.webp&amp;w=3840&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL"
+                  //   srcSet="
+                  //   /images/Fhome%2Fdoor-product-image.webp&w=32&q=75&dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL     32w,
+                  //   /images/Fhome%2Fdoor-product-image.webp&w=48&q=75&dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL     48w,
+                  //   /images/Fhome%2Fdoor-product-image.webp&w=64&q=75&dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL     64w,
+                  //   /images/Fhome%2Fdoor-product-image.webp&w=96&q=75&dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL     96w,
+                  //   /images/Fhome%2Fdoor-product-image.webp&w=128&q=75&dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL   128w,
+                  //   /images/Fhome%2Fdoor-product-image.webp&w=256&q=75&dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL   256w,
+                  //   /images/Fhome%2Fdoor-product-image.webp&w=384&q=75&dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL   384w,
+                  //   /images/Fhome%2Fdoor-product-image.webp&w=640&q=75&dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL   640w,
+                  //   /images/Fhome%2Fdoor-product-image.webp&w=750&q=75&dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL   750w,
+                  //   /images/Fhome%2Fdoor-product-image.webp&w=828&q=75&dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL   828w,
+                  //   /images/Fhome%2Fdoor-product-image.webp&w=1080&q=75&dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL 1080w,
+                  //   /images/Fhome%2Fdoor-product-image.webp&w=1200&q=75&dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL 1200w,
+                  //   /images/Fhome%2Fdoor-product-image.webp&w=1920&q=75&dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL 1920w,
+                  //   /images/Fhome%2Fdoor-product-image.webp&w=2048&q=75&dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL 2048w,
+                  //   /images/Fhome%2Fdoor-product-image.webp&w=3840&q=75&dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL 3840w
+                  // "
+                  src="/images/home/door-product-image.webp"
                 />
                 <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-black/25 via-transparent to-transparent"></div>
                 <div className="absolute left-[26px] top-[26px] flex h-14 w-14 items-center justify-center rounded-[10px] bg-white">
@@ -797,6 +782,7 @@ export const OurSolutionSection = () => {
                     strokeLinejoin="round"
                     className="lucide lucide-door-open h-[34px] w-[34px] text-primary"
                     aria-hidden="true"
+                    color="rgb(87 183 192)"
                   >
                     <path d="M11 20H2"></path>
                     <path d="M11 4.562v16.157a1 1 0 0 0 1.242.97L19 20V5.562a2 2 0 0 0-1.515-1.94l-4-1A2 2 0 0 0 11 4.561z"></path>
@@ -888,24 +874,24 @@ export const OurSolutionSection = () => {
                     color: "transparent",
                   }}
                   sizes="(max-width: 1024px) calc(100vw - 2.5rem), 600px"
-                  srcSet="
-                  /_next/image?url=%2Fimages%2Fhome%2Fwindow-systems-image.webp&amp;w=32&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL     32w,
-                  /_next/image?url=%2Fimages%2Fhome%2Fwindow-systems-image.webp&amp;w=48&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL     48w,
-                  /_next/image?url=%2Fimages%2Fhome%2Fwindow-systems-image.webp&amp;w=64&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL     64w,
-                  /_next/image?url=%2Fimages%2Fhome%2Fwindow-systems-image.webp&amp;w=96&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL     96w,
-                  /_next/image?url=%2Fimages%2Fhome%2Fwindow-systems-image.webp&amp;w=128&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL   128w,
-                  /_next/image?url=%2Fimages%2Fhome%2Fwindow-systems-image.webp&amp;w=256&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL   256w,
-                  /_next/image?url=%2Fimages%2Fhome%2Fwindow-systems-image.webp&amp;w=384&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL   384w,
-                  /_next/image?url=%2Fimages%2Fhome%2Fwindow-systems-image.webp&amp;w=640&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL   640w,
-                  /_next/image?url=%2Fimages%2Fhome%2Fwindow-systems-image.webp&amp;w=750&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL   750w,
-                  /_next/image?url=%2Fimages%2Fhome%2Fwindow-systems-image.webp&amp;w=828&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL   828w,
-                  /_next/image?url=%2Fimages%2Fhome%2Fwindow-systems-image.webp&amp;w=1080&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL 1080w,
-                  /_next/image?url=%2Fimages%2Fhome%2Fwindow-systems-image.webp&amp;w=1200&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL 1200w,
-                  /_next/image?url=%2Fimages%2Fhome%2Fwindow-systems-image.webp&amp;w=1920&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL 1920w,
-                  /_next/image?url=%2Fimages%2Fhome%2Fwindow-systems-image.webp&amp;w=2048&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL 2048w,
-                  /_next/image?url=%2Fimages%2Fhome%2Fwindow-systems-image.webp&amp;w=3840&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL 3840w
-                "
-                  src="/_next/image?url=%2Fimages%2Fhome%2Fwindow-systems-image.webp&amp;w=3840&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL"
+                  //   srcSet="
+                  //   /images/Fhome%2Fwindow-systems-image.webp&w=32&q=75&dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL     32w,
+                  //   /images/Fhome%2Fwindow-systems-image.webp&w=48&q=75&dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL     48w,
+                  //   /images/Fhome%2Fwindow-systems-image.webp&w=64&q=75&dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL     64w,
+                  //   /images/Fhome%2Fwindow-systems-image.webp&w=96&q=75&dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL     96w,
+                  //   /images/Fhome%2Fwindow-systems-image.webp&w=128&q=75&dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL   128w,
+                  //   /images/Fhome%2Fwindow-systems-image.webp&w=256&q=75&dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL   256w,
+                  //   /images/Fhome%2Fwindow-systems-image.webp&w=384&q=75&dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL   384w,
+                  //   /images/Fhome%2Fwindow-systems-image.webp&w=640&q=75&dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL   640w,
+                  //   /images/Fhome%2Fwindow-systems-image.webp&w=750&q=75&dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL   750w,
+                  //   /images/Fhome%2Fwindow-systems-image.webp&w=828&q=75&dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL   828w,
+                  //   /images/Fhome%2Fwindow-systems-image.webp&w=1080&q=75&dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL 1080w,
+                  //   /images/Fhome%2Fwindow-systems-image.webp&w=1200&q=75&dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL 1200w,
+                  //   /images/Fhome%2Fwindow-systems-image.webp&w=1920&q=75&dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL 1920w,
+                  //   /images/Fhome%2Fwindow-systems-image.webp&w=2048&q=75&dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL 2048w,
+                  //   /images/Fhome%2Fwindow-systems-image.webp&w=3840&q=75&dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL 3840w
+                  // "
+                  src="/images/home/window-systems-image.webp"
                 />
                 <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-black/25 via-transparent to-transparent"></div>
                 <div className="absolute left-[26px] top-[26px] flex h-14 w-14 items-center justify-center rounded-[10px] bg-white">
@@ -921,6 +907,7 @@ export const OurSolutionSection = () => {
                     stroke-linejoin="round"
                     className="lucide lucide-maximize h-[34px] w-[34px] text-primary"
                     aria-hidden="true"
+                    color="rgb(87 183 192)"
                   >
                     <path d="M8 3H5a2 2 0 0 0-2 2v3"></path>
                     <path d="M21 8V5a2 2 0 0 0-2-2h-3"></path>
