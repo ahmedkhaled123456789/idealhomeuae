@@ -1,0 +1,1055 @@
+import { useRef } from "react";
+import { gsap } from "gsap";
+import { useGSAP } from "@gsap/react";
+// import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+// gsap.registerPlugin(ScrollTrigger);
+
+export const OurSolutionSection = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const sectionRef = useRef<HTMLElement>(null);
+  const backgroundRef = useRef<HTMLDivElement>(null);
+  const gradientOverlayRef = useRef<SVGSVGElement>(null);
+  const maskGroupRef = useRef<SVGGElement>(null);
+  const textGroupRef = useRef<SVGGElement>(null);
+  const solutionsTextRef = useRef<HTMLDivElement>(null);
+  const darkGradientBgRef = useRef<HTMLDivElement>(null);
+  const headerIconRef = useRef<HTMLDivElement>(null);
+  const headerTitleRef = useRef<HTMLDivElement>(null);
+  const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
+  cardsRef.current = [];
+
+  const setCardRef = (el: HTMLDivElement | null) => {
+    if (el && !cardsRef.current.includes(el)) {
+      cardsRef.current.push(el);
+    }
+  };
+
+  useGSAP(
+    () => {
+      const t = sectionRef.current;
+      if (!t) return;
+
+      const baseScale = 0.65;
+      const introScale = 1.2;
+      const exitScale = 5.2;
+      const e = "720 450";
+
+      gsap.set(backgroundRef.current, {
+        opacity: 1,
+        filter: "blur(0px)",
+        scale: 1,
+      });
+      gsap.set(gradientOverlayRef.current, { opacity: 1 });
+      gsap.set(maskGroupRef.current, {
+        opacity: 1,
+        scale: baseScale,
+        svgOrigin: e,
+      });
+      gsap.set(textGroupRef.current, {
+        opacity: 0,
+        scale: baseScale,
+        svgOrigin: e,
+      });
+      gsap.set(solutionsTextRef.current, { opacity: 0, y: 28 });
+      gsap.set(darkGradientBgRef.current, { opacity: 0 });
+      gsap.set(headerIconRef.current, { opacity: 0, y: -8 });
+      gsap.set(headerTitleRef.current, { opacity: 0, y: 44 });
+      cardsRef.current.forEach((card) => {
+        if (card) gsap.set(card, { opacity: 0, y: 80, scale: 0.93 });
+      });
+
+      const n = gsap.timeline({
+        defaults: { ease: "power2.inOut" },
+        scrollTrigger: {
+          trigger: t,
+          start: "top top",
+          end: "+=360%",
+          pin: true,
+          scrub: 0.55,
+          anticipatePin: 1,
+        },
+      });
+
+      n.to(
+        [maskGroupRef.current, textGroupRef.current],
+        { scale: introScale, svgOrigin: e, duration: 2, ease: "power2.out" },
+        0,
+      )
+        .to(
+          textGroupRef.current,
+          { opacity: 1, duration: 0.45, ease: "power2.out" },
+          0,
+        )
+        .to(
+          [maskGroupRef.current, textGroupRef.current],
+          {
+            scale: exitScale,
+            svgOrigin: e,
+            duration: 2.9,
+            ease: "power2.inOut",
+          },
+          1.55,
+        )
+        .to(
+          [maskGroupRef.current, textGroupRef.current],
+          { opacity: 0, duration: 1.2, ease: "power1.out" },
+          3.65,
+        )
+        .to(
+          gradientOverlayRef.current,
+          { opacity: 0, duration: 1.2, ease: "power1.out" },
+          3.85,
+        )
+        .to(
+          solutionsTextRef.current,
+          { opacity: 1, y: 0, duration: 0.9, ease: "power2.out" },
+          4.45,
+        )
+        .to(
+          solutionsTextRef.current,
+          { opacity: 0, y: -24, duration: 0.6, ease: "power2.in" },
+          5.65,
+        )
+        .to(
+          darkGradientBgRef.current,
+          { opacity: 1, duration: 0.5, ease: "power2.out" },
+          6.05,
+        )
+        .to(
+          backgroundRef.current,
+          {
+            filter: "blur(8px)",
+            scale: 1.03,
+            duration: 0.8,
+            ease: "power2.out",
+          },
+          6.05,
+        )
+        .to(
+          headerIconRef.current,
+          { opacity: 1, y: 0, duration: 0.35, ease: "power2.out" },
+          6.15,
+        )
+        .to(
+          headerTitleRef.current,
+          { opacity: 1, y: 0, duration: 0.7, ease: "power2.out" },
+          6.2,
+        )
+        .to(
+          headerIconRef.current,
+          { opacity: 0, y: -12, duration: 0.45, ease: "power2.in" },
+          6.62,
+        )
+        .to(
+          cardsRef.current,
+          {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            duration: 0.72,
+            stagger: 0.11,
+            ease: "power2.out",
+          },
+          6.72,
+        );
+    },
+    { scope: containerRef },
+  );
+
+  return (
+    <div
+      ref={containerRef}
+      className="pin-spacer"
+      style={{
+        order: 0,
+        placeSelf: "auto",
+        gridArea: "auto",
+        zIndex: "auto",
+        float: "none",
+        flexShrink: 1,
+        display: "block",
+        margin: "0px",
+        inset: "0px",
+        position: "relative",
+        flexBasis: "auto",
+        overflow: "visible",
+        boxSizing: "border-box",
+        width: "995px",
+        height: "5100px",
+        padding: "0px 0px 3139px",
+      }}
+    >
+      <section
+        ref={sectionRef}
+        id="solutions"
+        className="relative min-h-screen w-full overflow-x-clip"
+        style={{
+          backgroundColor: "rgb(10, 10, 10)",
+          translate: "none",
+          rotate: "none",
+          scale: "none",
+          overflow: "hidden",
+          inset: "0px auto auto 0px",
+          margin: "0px",
+          maxWidth: "995px",
+          width: "995px",
+          height: "100dvh",
+          padding: "0px",
+          transform: "translate(0px, 0px)",
+        }}
+      >
+        <div className="absolute inset-0 overflow-hidden">
+          <div
+            ref={backgroundRef}
+            className="absolute inset-0 z-0"
+            style={{
+              backgroundImage:
+                'url("/images/home/parallax-effect-background-image.webp")',
+              backgroundSize: "cover",
+              backgroundPosition: "center center",
+              translate: "none",
+              rotate: "none",
+              scale: "none",
+              transform: "translate(0px, 0px)",
+              filter: "blur(0px)",
+              opacity: 1,
+            }}
+          ></div>
+          <svg
+            ref={gradientOverlayRef}
+            className="pointer-events-none absolute inset-x-0 top-0 z-10 h-dvh w-full"
+            viewBox="0 0 1440 900"
+            preserveAspectRatio="xMidYMid slice"
+            aria-hidden="true"
+            style={{ opacity: 1 }}
+          >
+            <defs>
+              <mask
+                id="_R_2av5t9ivb_"
+                maskUnits="userSpaceOnUse"
+                maskContentUnits="userSpaceOnUse"
+                x="0"
+                y="0"
+                width="1440"
+                height="900"
+              >
+                <rect x="0" y="0" width="1440" height="900" fill="white"></rect>
+                <g
+                  ref={maskGroupRef}
+                  data-svg-origin="719.9999645402986 449.9999803534086"
+                  transform="matrix(0.54,0,0,0.54,331.2,207)"
+                  style={{
+                    translate: "none",
+                    rotate: "none",
+                    scale: "none",
+                    transformOrigin: "0px 0px",
+                    opacity: 0,
+                  }}
+                >
+                  <text
+                    x="720"
+                    y="296"
+                    fill="black"
+                    font-family='"Bebas Neue", Impact, sans-serif'
+                    font-size="168"
+                    font-weight="400"
+                    letter-spacing="0.02em"
+                    text-anchor="middle"
+                  >
+                    OUR
+                  </text>
+                  <text
+                    x="720"
+                    y="450"
+                    fill="black"
+                    font-family='"Bebas Neue", Impact, sans-serif'
+                    font-size="168"
+                    font-weight="400"
+                    letter-spacing="0.02em"
+                    text-anchor="middle"
+                  >
+                    INTERIOR
+                  </text>
+                  <text
+                    x="720"
+                    y="604"
+                    fill="black"
+                    font-family='"Bebas Neue", Impact, sans-serif'
+                    font-size="168"
+                    font-weight="400"
+                    letter-spacing="0.02em"
+                    text-anchor="middle"
+                  >
+                    SOLUTIONS
+                  </text>
+                </g>
+              </mask>
+            </defs>
+            <image
+              href="/images/home/parallax-foreground.webp"
+              x="0"
+              y="0"
+              width="1440"
+              height="900"
+              preserveAspectRatio="xMidYMid slice"
+              mask="url(#_R_2av5t9ivb_)"
+            ></image>
+          </svg>
+          <svg
+            className="pointer-events-none absolute inset-x-0 top-0 z-20 h-dvh w-full"
+            viewBox="0 0 1440 900"
+            preserveAspectRatio="xMidYMid slice"
+            aria-hidden="true"
+          >
+            <g
+              ref={textGroupRef}
+              data-svg-origin="719.9999645402986 449.9999803534086"
+              transform="matrix(0.54,0,0,0.54,331.2,207)"
+              style={{
+                translate: "none",
+                rotate: "none",
+                scale: "none",
+                transformOrigin: "0px 0px",
+                opacity: 1,
+              }}
+            >
+              <text
+                x="720"
+                y="296"
+                fill="transparent"
+                stroke="rgba(255,255,255,0.92)"
+                stroke-width="3"
+                paint-order="stroke"
+                font-family='"Bebas Neue", Impact, sans-serif'
+                font-size="168"
+                font-weight="400"
+                letter-spacing="0.02em"
+                text-anchor="middle"
+              >
+                OUR
+              </text>
+              <text
+                x="720"
+                y="450"
+                fill="transparent"
+                stroke="rgba(255,255,255,0.92)"
+                stroke-width="3"
+                paint-order="stroke"
+                font-family='"Bebas Neue", Impact, sans-serif'
+                font-size="168"
+                font-weight="400"
+                letter-spacing="0.02em"
+                text-anchor="middle"
+              >
+                INTERIOR
+              </text>
+              <text
+                x="720"
+                y="604"
+                fill="transparent"
+                stroke="rgba(255,255,255,0.92)"
+                stroke-width="3"
+                paint-order="stroke"
+                font-family='"Bebas Neue", Impact, sans-serif'
+                font-size="168"
+                font-weight="400"
+                letter-spacing="0.02em"
+                text-anchor="middle"
+              >
+                SOLUTIONS
+              </text>
+            </g>
+          </svg>
+          <div
+            ref={solutionsTextRef}
+            className="pointer-events-none absolute inset-0 z-30 flex items-center justify-center px-6 text-center"
+            style={{
+              translate: "none",
+              rotate: "none",
+              scale: "none",
+              transform: "translate(0px, 28px)",
+              opacity: 0,
+            }}
+          >
+            <div
+              className="flex flex-col items-center justify-center"
+              style={{ gap: 22 }}
+            >
+              <img
+                alt="Ideal Factory Icon"
+                loading="lazy"
+                width="96"
+                height="108"
+                decoding="async"
+                data-nimg="1"
+                className="object-contain"
+                style={{
+                  color: "transparent",
+                  height: "clamp(52px, 6.5vh, 84px)",
+                  width: "auto",
+                  filter: "drop-shadow(rgba(0, 0, 0, 0.22) 0px 10px 24px)",
+                }}
+                srcSet="
+              /_next/image?url=%2Fimages%2Fideal-factory-icon.png&amp;w=96&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL  1x,
+              /_next/image?url=%2Fimages%2Fideal-factory-icon.png&amp;w=256&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL 2x
+            "
+                src="https://www.idealhomeuae.com/_next/image?url=%2Fimages%2Fideal-factory-icon.png&amp;w=256&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL"
+              />
+              <h2
+                style={{
+                  fontFamily: "Lexend, Inter, sans-serif",
+                  fontWeight: 700,
+                  fontSize: "clamp(2rem, 4.6vw, 3rem)",
+                  lineHeight: 1.2,
+                  color: "rgb(255, 255, 255)",
+                  margin: 0,
+                  textShadow: "rgba(0, 0, 0, 0.3) 0px 10px 28px",
+                }}
+              >
+                Our Solutions
+              </h2>
+              <p
+                style={{
+                  fontFamily: "Lexend, Inter, sans-serif",
+                  fontWeight: 600,
+                  fontSize: "clamp(1rem, 2.4vw, 1.6rem)",
+                  lineHeight: 1.3,
+                  color: "rgb(255, 255, 255)",
+                  maxWidth: "min(78vw, 720px)",
+                  margin: 0,
+                  textShadow: "rgba(0, 0, 0, 0.3) 0px 10px 28px",
+                }}
+              >
+                We provide all types of integrated
+                <br />
+                <span style={{ color: "var(--primary)" }}>
+                  KITCHEN, CLOSET, DOOR Services
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div
+          ref={darkGradientBgRef}
+          className="relative z-40 w-full min-h-screen"
+          style={{ opacity: 0 }}
+        >
+          <div
+            className="pointer-events-none absolute inset-0"
+            style={{
+              background: `linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0.35) 0%,
+            rgba(0, 0, 0, 0.2) 40%,
+            rgba(0, 0, 0, 0.5) 100%
+          )`,
+            }}
+          ></div>
+          <div className="relative mx-auto w-full max-w-[1440px] px-[clamp(1.25rem,3.2vw,2.875rem)] pt-14 pb-8">
+            <div className="mx-auto mb-8 max-w-[1114px] text-center">
+              <div
+                ref={headerIconRef}
+                className="mb-5 flex justify-center"
+                style={{
+                  translate: "none",
+                  rotate: "none",
+                  scale: "none",
+                  transform: "translate(0px, -8px)",
+                  opacity: 0,
+                }}
+              >
+                <img
+                  alt="Ideal Factory Icon"
+                  aria-hidden="true"
+                  loading="lazy"
+                  width="96"
+                  height="108"
+                  decoding="async"
+                  data-nimg="1"
+                  className="object-contain"
+                  style={{
+                    color: "transparent",
+                    height: "clamp(48px, 6vh, 72px)",
+                    width: "auto",
+                  }}
+                  srcSet="
+                /_next/image?url=%2Fimages%2Fideal-factory-icon.png&amp;w=96&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL  1x,
+                /_next/image?url=%2Fimages%2Fideal-factory-icon.png&amp;w=256&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL 2x
+              "
+                  src="https://www.idealhomeuae.com/_next/image?url=%2Fimages%2Fideal-factory-icon.png&amp;w=256&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL"
+                />
+              </div>
+              <div
+                ref={headerTitleRef}
+                style={{
+                  translate: "none",
+                  rotate: "none",
+                  scale: "none",
+                  transform: "translate(0px, 44px)",
+                  opacity: 0,
+                }}
+              >
+                <h2
+                  style={{
+                    fontFamily: "'Lexend', Inter, sans-serif",
+                    fontWeight: 700,
+                    fontSize: "clamp(2.5rem, 4vw, 3.5rem)",
+                    lineHeight: 1.2,
+                    color: "#ffffff",
+                  }}
+                >
+                  Our Solutions
+                </h2>
+                <p
+                  style={{
+                    fontFamily: "'Lexend', Inter, sans-serif",
+                    fontWeight: 600,
+                    fontSize: "clamp(1.1rem, 2.3vw, 2rem)",
+                    lineHeight: 1.3,
+                    color: "#ffffff",
+                    marginTop: "0.75rem",
+                  }}
+                >
+                  We provide all types of integrated
+                  <br />
+                  <span style={{ color: "var(--primary)" }}>
+                    KITCHEN, CLOSET, DOOR Services
+                  </span>
+                </p>
+              </div>
+            </div>
+            <div className="grid grid-cols-1 gap-5 lg:grid-cols-2">
+              <div
+                ref={setCardRef}
+                className="group flex flex-col overflow-hidden rounded-[10px] border border-white/5 bg-[rgba(35,31,32,0.8)] backdrop-blur-[2px]"
+                style={{
+                  translate: "none",
+                  rotate: "none",
+                  scale: "none",
+                  transform: "translate(0px, 80px) scale(0.93, 0.93)",
+                  opacity: 0,
+                }}
+              >
+                <div
+                  className="relative overflow-hidden"
+                  style={{ height: "clamp(220px, 32vh, 380px)" }}
+                >
+                  <img
+                    alt="Kitchens"
+                    loading="lazy"
+                    decoding="async"
+                    data-nimg="fill"
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+                    style={{
+                      position: "absolute",
+                      height: "100%",
+                      width: "100%",
+                      left: 0,
+                      top: 0,
+                      right: 0,
+                      bottom: 0,
+                      color: "transparent",
+                    }}
+                    sizes="(max-width: 1024px) calc(100vw - 2.5rem), 600px"
+                    srcSet="
+                  /_next/image?url=%2Fimages%2Fhome%2Fkitchen-product-image.webp&amp;w=32&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL     32w,
+                  /_next/image?url=%2Fimages%2Fhome%2Fkitchen-product-image.webp&amp;w=48&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL     48w,
+                  /_next/image?url=%2Fimages%2Fhome%2Fkitchen-product-image.webp&amp;w=64&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL     64w,
+                  /_next/image?url=%2Fimages%2Fhome%2Fkitchen-product-image.webp&amp;w=96&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL     96w,
+                  /_next/image?url=%2Fimages%2Fhome%2Fkitchen-product-image.webp&amp;w=128&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL   128w,
+                  /_next/image?url=%2Fimages%2Fhome%2Fkitchen-product-image.webp&amp;w=256&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL   256w,
+                  /_next/image?url=%2Fimages%2Fhome%2Fkitchen-product-image.webp&amp;w=384&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL   384w,
+                  /_next/image?url=%2Fimages%2Fhome%2Fkitchen-product-image.webp&amp;w=640&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL   640w,
+                  /_next/image?url=%2Fimages%2Fhome%2Fkitchen-product-image.webp&amp;w=750&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL   750w,
+                  /_next/image?url=%2Fimages%2Fhome%2Fkitchen-product-image.webp&amp;w=828&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL   828w,
+                  /_next/image?url=%2Fimages%2Fhome%2Fkitchen-product-image.webp&amp;w=1080&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL 1080w,
+                  /_next/image?url=%2Fimages%2Fhome%2Fkitchen-product-image.webp&amp;w=1200&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL 1200w,
+                  /_next/image?url=%2Fimages%2Fhome%2Fkitchen-product-image.webp&amp;w=1920&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL 1920w,
+                  /_next/image?url=%2Fimages%2Fhome%2Fkitchen-product-image.webp&amp;w=2048&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL 2048w,
+                  /_next/image?url=%2Fimages%2Fhome%2Fkitchen-product-image.webp&amp;w=3840&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL 3840w
+                "
+                    src="/_next/image?url=%2Fimages%2Fhome%2Fkitchen-product-image.webp&amp;w=3840&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL"
+                  />
+                  <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-black/25 via-transparent to-transparent"></div>
+                  <div className="absolute left-[26px] top-[26px] flex h-14 w-14 items-center justify-center rounded-[10px] bg-white">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.7"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="lucide lucide-chef-hat h-[34px] w-[34px] text-primary"
+                      aria-hidden="true"
+                    >
+                      <path d="M17 21a1 1 0 0 0 1-1v-5.35c0-.457.316-.844.727-1.041a4 4 0 0 0-2.134-7.589 5 5 0 0 0-9.186 0 4 4 0 0 0-2.134 7.588c.411.198.727.585.727 1.041V20a1 1 0 0 0 1 1Z"></path>
+                      <path d="M6 17h12"></path>
+                    </svg>
+                  </div>
+                </div>
+                <div className="flex flex-1 flex-row w-full items-center justify-between px-5 py-5">
+                  <div>
+                    <h4
+                      style={{
+                        fontFamily: "'Inter', sans-serif",
+                        fontWeight: 600,
+                        fontSize: 24,
+                        lineHeight: 1.3,
+                        color: "#ffffff",
+                        margin: 0,
+                      }}
+                    >
+                      Kitchens
+                    </h4>
+                    <p
+                      style={{
+                        fontFamily: "'Inter', sans-serif",
+                        fontWeight: 400,
+                        fontSize: 16,
+                        lineHeight: 1.5,
+                        color: "rgba(255, 255, 255, 0.9)",
+                        margin: 0,
+                      }}
+                    >
+                      Designed for daily use, built for long-term performance
+                    </p>
+                  </div>
+                  <div className="mt-auto flex justify-end">
+                    <a
+                      className="flex h-10 w-10 items-center justify-center rounded-[10px] bg-primary transition-all duration-300 group-hover:bg-primary-hover group-hover:shadow-[0_0_20px_rgb(var(--primary)_/_0.4)]"
+                      aria-label="Learn more about Kitchens"
+                      href="/service/kitchens"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="lucide lucide-arrow-right h-4 w-4 text-white"
+                        aria-hidden="true"
+                      >
+                        <path d="M5 12h14"></path>
+                        <path d="m12 5 7 7-7 7"></path>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div
+                ref={setCardRef}
+                className="group flex flex-col overflow-hidden rounded-[10px] border border-white/5 bg-[rgba(35,31,32,0.8)] backdrop-blur-[2px]"
+                style={{
+                  translate: "none",
+                  rotate: "none",
+                  scale: "none",
+                  transform: "translate(0px, 80px) scale(0.93, 0.93)",
+                  opacity: 0,
+                }}
+              >
+                <div
+                  className="relative overflow-hidden"
+                  style={{ height: "clamp(220px, 32vh, 380px)" }}
+                >
+                  <img
+                    alt="Wardrobes &amp; Closets"
+                    loading="lazy"
+                    decoding="async"
+                    data-nimg="fill"
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+                    style={{
+                      position: "absolute",
+                      height: "100%",
+                      width: "100%",
+                      left: 0,
+                      top: 0,
+                      right: 0,
+                      bottom: 0,
+                      color: "transparent",
+                    }}
+                    sizes="(max-width: 1024px) calc(100vw - 2.5rem), 600px"
+                    srcSet="
+                  /_next/image?url=%2Fimages%2Fhome%2Fwardrobe-product-image.webp&amp;w=32&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL     32w,
+                  /_next/image?url=%2Fimages%2Fhome%2Fwardrobe-product-image.webp&amp;w=48&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL     48w,
+                  /_next/image?url=%2Fimages%2Fhome%2Fwardrobe-product-image.webp&amp;w=64&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL     64w,
+                  /_next/image?url=%2Fimages%2Fhome%2Fwardrobe-product-image.webp&amp;w=96&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL     96w,
+                  /_next/image?url=%2Fimages%2Fhome%2Fwardrobe-product-image.webp&amp;w=128&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL   128w,
+                  /_next/image?url=%2Fimages%2Fhome%2Fwardrobe-product-image.webp&amp;w=256&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL   256w,
+                  /_next/image?url=%2Fimages%2Fhome%2Fwardrobe-product-image.webp&amp;w=384&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL   384w,
+                  /_next/image?url=%2Fimages%2Fhome%2Fwardrobe-product-image.webp&amp;w=640&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL   640w,
+                  /_next/image?url=%2Fimages%2Fhome%2Fwardrobe-product-image.webp&amp;w=750&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL   750w,
+                  /_next/image?url=%2Fimages%2Fhome%2Fwardrobe-product-image.webp&amp;w=828&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL   828w,
+                  /_next/image?url=%2Fimages%2Fhome%2Fwardrobe-product-image.webp&amp;w=1080&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL 1080w,
+                  /_next/image?url=%2Fimages%2Fhome%2Fwardrobe-product-image.webp&amp;w=1200&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL 1200w,
+                  /_next/image?url=%2Fimages%2Fhome%2Fwardrobe-product-image.webp&amp;w=1920&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL 1920w,
+                  /_next/image?url=%2Fimages%2Fhome%2Fwardrobe-product-image.webp&amp;w=2048&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL 2048w,
+                  /_next/image?url=%2Fimages%2Fhome%2Fwardrobe-product-image.webp&amp;w=3840&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL 3840w
+                "
+                    src="/_next/image?url=%2Fimages%2Fhome%2Fwardrobe-product-image.webp&amp;w=3840&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL"
+                  />
+                  <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-black/25 via-transparent to-transparent"></div>
+                  <div className="absolute left-[26px] top-[26px] flex h-14 w-14 items-center justify-center rounded-[10px] bg-white">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.7"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="lucide lucide-shirt h-[34px] w-[34px] text-primary"
+                      aria-hidden="true"
+                    >
+                      <path d="M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z"></path>
+                    </svg>
+                  </div>
+                </div>
+                <div className="flex flex-1 flex-row w-full items-center justify-between px-5 py-5">
+                  <div>
+                    <h4
+                      style={{
+                        fontFamily: "'Inter', sans-serif",
+                        fontWeight: 600,
+                        fontSize: 24,
+                        lineHeight: 1.3,
+                        color: "#ffffff",
+                        margin: 0,
+                      }}
+                    >
+                      Wardrobes &amp; Closets
+                    </h4>
+                    <p
+                      style={{
+                        fontFamily: "'Inter', sans-serif",
+                        fontWeight: 400,
+                        fontSize: 16,
+                        lineHeight: 1.5,
+                        color: "rgba(255, 255, 255, 0.9)",
+                        margin: 0,
+                      }}
+                    >
+                      Structured storage that stays organized over time
+                    </p>
+                  </div>
+                  <div className="mt-auto flex justify-end">
+                    <a
+                      className="flex h-10 w-10 items-center justify-center rounded-[10px] bg-primary transition-all duration-300 group-hover:bg-primary-hover group-hover:shadow-[0_0_20px_rgb(var(--primary)_/_0.4)]"
+                      aria-label="Learn more about Wardrobes &amp; Closets"
+                      href="/service/wardrobes"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="lucide lucide-arrow-right h-4 w-4 text-white"
+                        aria-hidden="true"
+                      >
+                        <path d="M5 12h14"></path>
+                        <path d="m12 5 7 7-7 7"></path>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div
+                ref={setCardRef}
+                className="group flex flex-col overflow-hidden rounded-[10px] border border-white/5 bg-[rgba(35,31,32,0.8)] backdrop-blur-[2px]"
+                style={{
+                  translate: "none",
+                  rotate: "none",
+                  scale: "none",
+                  transform: "translate(0px, 80px) scale(0.93, 0.93)",
+                  opacity: 0,
+                }}
+              >
+                <div
+                  className="relative overflow-hidden"
+                  style={{ height: "clamp(220px, 32vh, 380px)" }}
+                >
+                  <img
+                    alt="Interior Doors"
+                    loading="lazy"
+                    decoding="async"
+                    data-nimg="fill"
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+                    style={{
+                      position: "absolute",
+                      height: "100%",
+                      width: "100%",
+                      left: 0,
+                      top: 0,
+                      right: 0,
+                      bottom: 0,
+                      color: "transparent",
+                    }}
+                    sizes="(max-width: 1024px) calc(100vw - 2.5rem), 600px"
+                    srcSet="
+                  /_next/image?url=%2Fimages%2Fhome%2Fdoor-product-image.webp&amp;w=32&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL     32w,
+                  /_next/image?url=%2Fimages%2Fhome%2Fdoor-product-image.webp&amp;w=48&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL     48w,
+                  /_next/image?url=%2Fimages%2Fhome%2Fdoor-product-image.webp&amp;w=64&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL     64w,
+                  /_next/image?url=%2Fimages%2Fhome%2Fdoor-product-image.webp&amp;w=96&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL     96w,
+                  /_next/image?url=%2Fimages%2Fhome%2Fdoor-product-image.webp&amp;w=128&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL   128w,
+                  /_next/image?url=%2Fimages%2Fhome%2Fdoor-product-image.webp&amp;w=256&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL   256w,
+                  /_next/image?url=%2Fimages%2Fhome%2Fdoor-product-image.webp&amp;w=384&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL   384w,
+                  /_next/image?url=%2Fimages%2Fhome%2Fdoor-product-image.webp&amp;w=640&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL   640w,
+                  /_next/image?url=%2Fimages%2Fhome%2Fdoor-product-image.webp&amp;w=750&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL   750w,
+                  /_next/image?url=%2Fimages%2Fhome%2Fdoor-product-image.webp&amp;w=828&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL   828w,
+                  /_next/image?url=%2Fimages%2Fhome%2Fdoor-product-image.webp&amp;w=1080&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL 1080w,
+                  /_next/image?url=%2Fimages%2Fhome%2Fdoor-product-image.webp&amp;w=1200&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL 1200w,
+                  /_next/image?url=%2Fimages%2Fhome%2Fdoor-product-image.webp&amp;w=1920&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL 1920w,
+                  /_next/image?url=%2Fimages%2Fhome%2Fdoor-product-image.webp&amp;w=2048&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL 2048w,
+                  /_next/image?url=%2Fimages%2Fhome%2Fdoor-product-image.webp&amp;w=3840&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL 3840w
+                "
+                    src="/_next/image?url=%2Fimages%2Fhome%2Fdoor-product-image.webp&amp;w=3840&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL"
+                  />
+                  <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-black/25 via-transparent to-transparent"></div>
+                  <div className="absolute left-[26px] top-[26px] flex h-14 w-14 items-center justify-center rounded-[10px] bg-white">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.7"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="lucide lucide-door-open h-[34px] w-[34px] text-primary"
+                      aria-hidden="true"
+                    >
+                      <path d="M11 20H2"></path>
+                      <path d="M11 4.562v16.157a1 1 0 0 0 1.242.97L19 20V5.562a2 2 0 0 0-1.515-1.94l-4-1A2 2 0 0 0 11 4.561z"></path>
+                      <path d="M11 4H8a2 2 0 0 0-2 2v14"></path>
+                      <path d="M14 12h.01"></path>
+                      <path d="M22 20h-3"></path>
+                    </svg>
+                  </div>
+                </div>
+                <div className="flex flex-1 flex-row w-full items-center justify-between px-5 py-5">
+                  <div>
+                    <h4
+                      style={{
+                        fontFamily: "'Inter', sans-serif",
+                        fontWeight: 600,
+                        fontSize: 24,
+                        lineHeight: 1.3,
+                        color: "#ffffff",
+                        margin: 0,
+                      }}
+                    >
+                      Interior Doors
+                    </h4>
+                    <p
+                      style={{
+                        fontFamily: "'Inter', sans-serif",
+                        fontWeight: 400,
+                        fontSize: 16,
+                        lineHeight: 1.5,
+                        color: "rgba(255, 255, 255, 0.9)",
+                        margin: 0,
+                      }}
+                    >
+                      Precise finishes that hold up with everyday use
+                    </p>
+                  </div>
+                  <div className="mt-auto flex justify-end">
+                    <a
+                      className="flex h-10 w-10 items-center justify-center rounded-[10px] bg-primary transition-all duration-300 group-hover:bg-primary-hover group-hover:shadow-[0_0_20px_rgb(var(--primary)_/_0.4)]"
+                      aria-label="Learn more about Interior Doors"
+                      href="/service/interior-doors"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        className="lucide lucide-arrow-right h-4 w-4 text-white"
+                        aria-hidden="true"
+                      >
+                        <path d="M5 12h14"></path>
+                        <path d="m12 5 7 7-7 7"></path>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div
+                ref={setCardRef}
+                className="group flex flex-col overflow-hidden rounded-[10px] border border-white/5 bg-[rgba(35,31,32,0.8)] backdrop-blur-[2px]"
+                style={{
+                  transform: "translate(0px, 80px) scale(0.93, 0.93)",
+                  opacity: 0,
+                }}
+              >
+                <div
+                  className="relative overflow-hidden"
+                  style={{ height: "clamp(220px, 32vh, 380px)" }}
+                >
+                  <img
+                    alt="Premium Window Systems"
+                    loading="lazy"
+                    decoding="async"
+                    data-nimg="fill"
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+                    style={{
+                      position: "absolute",
+                      height: "100%",
+                      width: "100%",
+                      left: 0,
+                      top: 0,
+                      right: 0,
+                      bottom: 0,
+                      color: "transparent",
+                    }}
+                    sizes="(max-width: 1024px) calc(100vw - 2.5rem), 600px"
+                    srcSet="
+                  /_next/image?url=%2Fimages%2Fhome%2Fwindow-systems-image.webp&amp;w=32&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL     32w,
+                  /_next/image?url=%2Fimages%2Fhome%2Fwindow-systems-image.webp&amp;w=48&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL     48w,
+                  /_next/image?url=%2Fimages%2Fhome%2Fwindow-systems-image.webp&amp;w=64&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL     64w,
+                  /_next/image?url=%2Fimages%2Fhome%2Fwindow-systems-image.webp&amp;w=96&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL     96w,
+                  /_next/image?url=%2Fimages%2Fhome%2Fwindow-systems-image.webp&amp;w=128&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL   128w,
+                  /_next/image?url=%2Fimages%2Fhome%2Fwindow-systems-image.webp&amp;w=256&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL   256w,
+                  /_next/image?url=%2Fimages%2Fhome%2Fwindow-systems-image.webp&amp;w=384&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL   384w,
+                  /_next/image?url=%2Fimages%2Fhome%2Fwindow-systems-image.webp&amp;w=640&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL   640w,
+                  /_next/image?url=%2Fimages%2Fhome%2Fwindow-systems-image.webp&amp;w=750&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL   750w,
+                  /_next/image?url=%2Fimages%2Fhome%2Fwindow-systems-image.webp&amp;w=828&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL   828w,
+                  /_next/image?url=%2Fimages%2Fhome%2Fwindow-systems-image.webp&amp;w=1080&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL 1080w,
+                  /_next/image?url=%2Fimages%2Fhome%2Fwindow-systems-image.webp&amp;w=1200&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL 1200w,
+                  /_next/image?url=%2Fimages%2Fhome%2Fwindow-systems-image.webp&amp;w=1920&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL 1920w,
+                  /_next/image?url=%2Fimages%2Fhome%2Fwindow-systems-image.webp&amp;w=2048&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL 2048w,
+                  /_next/image?url=%2Fimages%2Fhome%2Fwindow-systems-image.webp&amp;w=3840&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL 3840w
+                "
+                    src="/_next/image?url=%2Fimages%2Fhome%2Fwindow-systems-image.webp&amp;w=3840&amp;q=75&amp;dpl=dpl_D5DsokQmJMHZbz8ry1o5cwhpd6kL"
+                  />
+                  <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-black/25 via-transparent to-transparent"></div>
+                  <div className="absolute left-[26px] top-[26px] flex h-14 w-14 items-center justify-center rounded-[10px] bg-white">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.7"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      className="lucide lucide-maximize h-[34px] w-[34px] text-primary"
+                      aria-hidden="true"
+                    >
+                      <path d="M8 3H5a2 2 0 0 0-2 2v3"></path>
+                      <path d="M21 8V5a2 2 0 0 0-2-2h-3"></path>
+                      <path d="M3 16v3a2 2 0 0 0 2 2h3"></path>
+                      <path d="M16 21h3a2 2 0 0 0 2-2v-3"></path>
+                    </svg>
+                  </div>
+                </div>
+                <div className="flex flex-1 flex-row w-full items-center justify-between px-5 py-5">
+                  <div>
+                    <h4
+                      style={{
+                        fontFamily: "'Inter', sans-serif",
+                        fontWeight: 600,
+                        fontSize: 24,
+                        lineHeight: 1.3,
+                        color: "#ffffff",
+                        margin: 0,
+                      }}
+                    >
+                      Premium Window Systems
+                    </h4>
+                    <p
+                      style={{
+                        fontFamily: "'Inter', sans-serif",
+                        fontWeight: 400,
+                        fontSize: 16,
+                        lineHeight: 1.5,
+                        color: "rgba(255, 255, 255, 0.9)",
+                        margin: 0,
+                      }}
+                    >
+                      Sealed systems for better comfort and control
+                    </p>
+                  </div>
+                  <div className="mt-auto flex justify-end">
+                    <a
+                      className="flex h-10 w-10 items-center justify-center rounded-[10px] bg-primary transition-all duration-300 group-hover:bg-primary-hover group-hover:shadow-[0_0_20px_rgb(var(--primary)_/_0.4)]"
+                      aria-label="Learn more about Premium Window Systems"
+                      href="/service/upvc-window-door-systems"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        className="lucide lucide-arrow-right h-4 w-4 text-white"
+                        aria-hidden="true"
+                      >
+                        <path d="M5 12h14"></path>
+                        <path d="m12 5 7 7-7 7"></path>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="mt-8 text-center">
+              <a
+                className="inline-flex items-center gap-2 rounded-[8px] bg-primary px-6 py-3 text-base font-medium text-white transition-all duration-300 hover:bg-primary-hover hover:shadow-[0_0_24px_rgb(var(--primary)_/_0.35)]"
+                style={{
+                  fontFamily: "'Inter', sans-serif",
+                  minWidth: "236px",
+                  height: "52px",
+                }}
+                href="/projects"
+              >
+                Explore Our Projects
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  className="lucide lucide-arrow-right h-[18px] w-[18px]"
+                  aria-hidden="true"
+                >
+                  <path d="M5 12h14"></path>
+                  <path d="m12 5 7 7-7 7"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+};
