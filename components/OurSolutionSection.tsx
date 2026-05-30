@@ -7,7 +7,6 @@ import { useRef } from "react";
 gsap.registerPlugin(ScrollTrigger);
 
 export const OurSolutionSection = () => {
-  const containerRef = useRef<HTMLDivElement>(null);
   const sectionRef = useRef<HTMLElement>(null);
   const backgroundRef = useRef<HTMLDivElement>(null);
   const gradientOverlayRef = useRef<SVGSVGElement>(null);
