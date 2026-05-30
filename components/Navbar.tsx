@@ -3,6 +3,7 @@
 import { useLocaleContext } from "@/context/LocaleProvider";
 import { Globe, Menu, Phone } from "lucide-react";
 import { useTranslations } from "next-intl";
+import Image from "next/image";
 
 export function Navbar() {
   const t = useTranslations();
@@ -11,16 +12,6 @@ export function Navbar() {
   return (
     <nav className="fixed top-6 left-0 right-0 z-50 mx-4 md:mx-10 lg:mx-20">
       <div className="max-w-[1440px] mx-auto bg-brand-black/80 backdrop-blur-md border border-brand-dark rounded-full px-6 py-4 flex items-center justify-between">
-        {/* Logo Area */}
-        <div className="flex items-center gap-2">
-          <div className="w-8 h-8 bg-brand-teal rounded-sm flex items-center justify-center">
-            <div className="w-4 h-4 border-2 border-white" />
-          </div>
-          <span className="font-heading font-bold text-xl tracking-tight text-white">
-            Ideal<span className="text-brand-teal">Factory</span>
-          </span>
-        </div>
-
         {/* Desktop Links */}
         <div className="hidden lg:flex items-center gap-8">
           <a
@@ -47,6 +38,21 @@ export function Navbar() {
           >
             {t("nav.contact")}
           </a>
+        </div>
+
+        {/* Logo Area */}
+        <div className="flex items-center gap-2">
+          <Image
+            src="/assets/ideal-factory-icon.png"
+            alt="Logo"
+            width={30}
+            height={30}
+            className="w-8 h-8"
+          />
+          <span className="font-heading font-medium  tracking-tight text-md leading-4 text-brand-teal">
+            Ideal <br />
+            Factory
+          </span>
         </div>
 
         {/* CTA & Actions */}
