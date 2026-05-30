@@ -1,6 +1,3 @@
-"use client";
-
-import { motion } from "framer-motion";
 import {
   AppWindow,
   ArrowRight,
@@ -8,11 +5,14 @@ import {
   Refrigerator,
   Shirt,
 } from "lucide-react";
-import { useTranslations } from "next-intl";
-import { useLocaleContext } from "@/context/LocaleProvider";
-export function SolutionsGrid() {
-  const t = useTranslations();
-  const { dir } = useLocaleContext();
+import { getLocale, getTranslations } from "next-intl/server";
+import MotionElement from "./motion/MotionElement";
+
+export async function SolutionsGrid() {
+  const locale = await getLocale();
+  const dir = locale === "en" ? "ltr" : "rtl";
+  const t = await getTranslations();
+
   const solutions = [
     {
       title: t("sol.grid.kitchens.title"),
@@ -49,7 +49,8 @@ export function SolutionsGrid() {
       <div className="max-w-[1348px] mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 mb-12">
           {solutions.map((solution, index) => (
-            <motion.div
+            <MotionElement
+              as="div"
               key={index}
               initial={{
                 opacity: 0,
@@ -85,7 +86,7 @@ export function SolutionsGrid() {
                 </div>
               </div>
 
-              <div className="p-8 pt-4 flex flex-col h-[160px] justify-between">
+              <div className="p-8 pt-4 flex flex-col min-h-[160px] justify-between">
                 <div>
                   <h4 className="font-heading font-bold text-[32px] md:text-[40px] text-white mb-2">
                     {solution.title}
@@ -96,18 +97,19 @@ export function SolutionsGrid() {
                 </div>
 
                 <div className="flex justify-end">
-                  <button className="w-10 h-10 rounded-lg bg-brand-teal flex items-center justify-center text-white hover:bg-brand-teal/90 transition-colors group-hover:scale-110">
+                  <button className="w-10 h-10 md:w-12 md:h-12 rounded-lg bg-brand-teal flex items-center justify-center text-white hover:bg-brand-teal/90 transition-colors group-hover:scale-110">
                     <ArrowRight
                       className={`w-5 h-5 ${dir === "rtl" ? "rotate-180" : ""}`}
                     />
                   </button>
                 </div>
               </div>
-            </motion.div>
+            </MotionElement>
           ))}
         </div>
 
-        <motion.div
+        <MotionElement
+          as="div"
           initial={{
             opacity: 0,
             y: 20,
@@ -131,7 +133,7 @@ export function SolutionsGrid() {
               className={`w-5 h-5 ${dir === "rtl" ? "rotate-180" : ""}`}
             />
           </button>
-        </motion.div>
+        </MotionElement>
       </div>
     </section>
   );
