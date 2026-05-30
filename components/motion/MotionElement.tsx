@@ -1,4 +1,5 @@
 "use client";
+import { useMemo } from "react";
 import { motion, type MotionProps } from "framer-motion";
 
 type MotionElementProps<T extends React.ElementType = "div"> = {
@@ -10,7 +11,7 @@ const MotionElement = <T extends React.ElementType = "div">({
   as = "div" as T,
   ...props
 }: MotionElementProps<T>) => {
-  const Component = motion.create(as as string);
+  const Component = useMemo(() => motion.create(as as string), [as]);
   return <Component {...props} />;
 };
 
