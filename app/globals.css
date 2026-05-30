@@ -24,3 +24,9 @@
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+.transparent-stroke {
+  @apply text-center text-transparent text-9xl font-brand-display;
+  -webkit-text-stroke: 1px #fff; /* Sets the stroke width and color */
+  text-stroke: 1px #fff; /* Standard property for future compatibility */
+}

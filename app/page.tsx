@@ -3,6 +3,8 @@ import { DesignBeforeSpending } from "@/components/DesignBeforeSpending";
 import { Gallery } from "@/components/Gallery";
 import { Hero } from "@/components/Hero";
 import { OurSolutionSection } from "@/components/OurSolutionSection";
+import OurSolutionsIntroOutlined from "@/components/OurSolutionsIntroOutlined";
+
 import { SolutionsGrid } from "@/components/SolutionsGrid";
 import { Testimonials } from "@/components/Testimonials";
 import { WhyChoose } from "@/components/WhyChoose";
@@ -12,6 +14,7 @@ const page = () => {
   return (
     <div>
       <Hero />
+      {/* <OurSolutionsIntroOutlined /> */}
       <OurSolutionSection />
       <SolutionsGrid />
       <WhyDifficult />
