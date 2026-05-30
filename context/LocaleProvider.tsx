@@ -48,7 +48,11 @@ export function LocaleProvider({
 
   return (
     <LocaleContext.Provider value={{ locale, dir, toggleLocale }}>
-      <NextIntlClientProvider locale={locale} messages={messages}>
+      <NextIntlClientProvider
+        locale={locale}
+        messages={messages}
+        timeZone="Asia/Riyadh"
+      >
         {children}
       </NextIntlClientProvider>
     </LocaleContext.Provider>

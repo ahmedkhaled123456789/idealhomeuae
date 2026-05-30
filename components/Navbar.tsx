@@ -1,8 +1,9 @@
 "use client";
 
+import { useLocaleContext } from "@/context/LocaleProvider";
 import { Globe, Menu, Phone } from "lucide-react";
 import { useTranslations } from "next-intl";
-import { useLocaleContext } from "@/context/LocaleProvider";
+
 export function Navbar() {
   const t = useTranslations();
   const { locale, toggleLocale } = useLocaleContext();
