@@ -2,9 +2,11 @@
 
 import { motion } from "framer-motion";
 import { ArrowLeft, Layers, PenTool, Settings, Wrench } from "lucide-react";
-import { useLanguage } from "../context/LanguageContext";
+import { useTranslations } from "next-intl";
+import { useLocaleContext } from "@/context/LocaleProvider";
 export function WhyDifficult() {
-  const { t, dir } = useLanguage();
+  const t = useTranslations();
+  const { dir } = useLocaleContext();
   const problems = [
     t("diff.prob1"),
     t("diff.prob2"),

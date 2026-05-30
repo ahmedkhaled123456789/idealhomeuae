@@ -1,9 +1,9 @@
 "use client";
 import { motion } from "framer-motion";
 import { Globe, Mail, Phone } from "lucide-react";
-import { useLanguage } from "../context/LanguageContext";
+import { useTranslations } from "next-intl";
 export function Footer() {
-  const { t } = useLanguage();
+  const t = useTranslations();
   return (
     <footer className="w-full bg-black pt-20 pb-10 px-4 md:px-10 lg:px-20">
       <motion.div
@@ -69,10 +69,10 @@ export function Footer() {
               {t("footer.explore")}
             </h4>
             {[
-              t("sol.grid.closets"),
-              t("sol.grid.kitchens"),
-              t("sol.grid.doors"),
-              t("sol.grid.windows"),
+              t("sol.grid.closets.title"),
+              t("sol.grid.kitchens.title"),
+              t("sol.grid.doors.title"),
+              t("sol.grid.windows.title"),
             ].map((link) => (
               <a
                 key={link}

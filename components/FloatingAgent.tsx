@@ -1,8 +1,10 @@
 "use client";
 import { motion } from "framer-motion";
-import { useLanguage } from "../context/LanguageContext";
+import { useTranslations } from "next-intl";
+import { useLocaleContext } from "@/context/LocaleProvider";
 export function FloatingAgent() {
-  const { t, dir } = useLanguage();
+  const t = useTranslations();
+  const { dir } = useLocaleContext();
   return (
     <div
       className={`fixed bottom-8 z-50 flex items-end gap-4 ${dir === "rtl" ? "left-8 flex-row-reverse" : "right-8"}`}

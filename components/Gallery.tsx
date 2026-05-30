@@ -2,9 +2,9 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { useLanguage } from "../context/LanguageContext";
+import { useTranslations } from "next-intl";
 export function Gallery() {
-  const { t } = useLanguage();
+  const t = useTranslations();
   const [activeTab, setActiveTab] = useState("All");
   const categories = [
     {

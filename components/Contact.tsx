@@ -1,8 +1,8 @@
 "use client";
-import { useLanguage } from "@/context/LanguageContext";
+import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 export function Contact() {
-  const { t } = useLanguage();
+  const t = useTranslations();
   return (
     <section className="w-full bg-linear-to-b from-brand-dark to-black py-24 px-4 md:px-10 lg:px-20 relative overflow-hidden">
       <div className="max-w-[1200px] mx-auto flex flex-col lg:flex-row gap-16 relative z-10">

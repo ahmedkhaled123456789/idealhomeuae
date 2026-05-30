@@ -1,8 +1,12 @@
 "use client";
-import { useLanguage } from "@/context/LanguageContext";
+
 import { Globe, Menu, Phone } from "lucide-react";
+import { useTranslations } from "next-intl";
+import { useLocaleContext } from "@/context/LocaleProvider";
 export function Navbar() {
-  const { t, lang, toggleLanguage } = useLanguage();
+  const t = useTranslations();
+  const { locale, toggleLocale } = useLocaleContext();
+
   return (
     <nav className="fixed top-6 left-0 right-0 z-50 mx-4 md:mx-10 lg:mx-20">
       <div className="max-w-[1440px] mx-auto bg-brand-black/80 backdrop-blur-md border border-brand-dark rounded-full px-6 py-4 flex items-center justify-between">
@@ -47,11 +51,11 @@ export function Navbar() {
         {/* CTA & Actions */}
         <div className="flex items-center gap-4">
           <button
-            onClick={toggleLanguage}
+            onClick={toggleLocale}
             className="hidden md:flex items-center gap-2 text-white/80 hover:text-white px-3 py-2 rounded-full border border-white/20 hover:border-white/40 transition-all text-sm font-medium"
           >
             <Globe className="w-4 h-4" />
-            {lang === "en" ? "العربية" : "English"}
+            {locale === "en" ? "العربية" : "English"}
           </button>
 
           <button className="hidden md:flex items-center gap-2 bg-brand-teal hover:bg-brand-teal/90 text-white px-6 py-2.5 rounded-full font-medium text-sm transition-all">

@@ -2,9 +2,11 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import { useLanguage } from "../context/LanguageContext";
+import { useLocale } from "next-intl";
+import { useTranslations } from "next-intl";
 export function OurSolutionsIntroOutlined() {
-  const { t, lang } = useLanguage();
+  const t = useTranslations();
+  const lang = useLocale();
   const sectionRef = useRef<HTMLElement>(null);
   // Track scroll through the tall section
   const { scrollYProgress } = useScroll({

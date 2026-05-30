@@ -2,9 +2,9 @@
 
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useLanguage } from "../context/LanguageContext";
+import { useTranslations } from "next-intl";
 export function OurSolutionsCircle() {
-  const { t } = useLanguage();
+  const t = useTranslations();
   const sectionRef = useRef<HTMLElement>(null);
   // Track entrance for the iris reveal — opens up as section enters view
   const { scrollYProgress } = useScroll({

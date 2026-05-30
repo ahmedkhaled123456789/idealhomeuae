@@ -217,11 +217,11 @@ export const OurSolutionSection = () => {
                   x="720"
                   y="296"
                   fill="black"
-                  font-family='"Bebas Neue", Impact, sans-serif'
-                  font-size="168"
-                  font-weight="400"
-                  letter-spacing="0.02em"
-                  text-anchor="middle"
+                  fontFamily='"Bebas Neue", Impact, sans-serif'
+                  fontSize="168"
+                  fontWeight="400"
+                  letterSpacing="0.02em"
+                  textAnchor="middle"
                 >
                   OUR
                 </text>
@@ -229,11 +229,11 @@ export const OurSolutionSection = () => {
                   x="720"
                   y="450"
                   fill="black"
-                  font-family='"Bebas Neue", Impact, sans-serif'
-                  font-size="168"
-                  font-weight="400"
-                  letter-spacing="0.02em"
-                  text-anchor="middle"
+                  fontFamily='"Bebas Neue", Impact, sans-serif'
+                  fontSize="168"
+                  fontWeight="400"
+                  letterSpacing="0.02em"
+                  textAnchor="middle"
                 >
                   INTERIOR
                 </text>
@@ -241,11 +241,11 @@ export const OurSolutionSection = () => {
                   x="720"
                   y="604"
                   fill="black"
-                  font-family='"Bebas Neue", Impact, sans-serif'
-                  font-size="168"
-                  font-weight="400"
-                  letter-spacing="0.02em"
-                  text-anchor="middle"
+                  fontFamily='"Bebas Neue", Impact, sans-serif'
+                  fontSize="168"
+                  fontWeight="400"
+                  letterSpacing="0.02em"
+                  textAnchor="middle"
                 >
                   SOLUTIONS
                 </text>
@@ -285,13 +285,13 @@ export const OurSolutionSection = () => {
               y="296"
               fill="transparent"
               stroke="rgba(255,255,255,0.92)"
-              stroke-width="3"
-              paint-order="stroke"
-              font-family='"Bebas Neue", Impact, sans-serif'
-              font-size="168"
-              font-weight="400"
-              letter-spacing="0.02em"
-              text-anchor="middle"
+              strokeWidth="3"
+              paintOrder="stroke"
+              fontFamily='"Bebas Neue", Impact, sans-serif'
+              fontSize="168"
+              fontWeight="400"
+              letterSpacing="0.02em"
+              textAnchor="middle"
             >
               OUR
             </text>
@@ -300,13 +300,13 @@ export const OurSolutionSection = () => {
               y="450"
               fill="transparent"
               stroke="rgba(255,255,255,0.92)"
-              stroke-width="3"
-              paint-order="stroke"
-              font-family='"Bebas Neue", Impact, sans-serif'
-              font-size="168"
-              font-weight="400"
-              letter-spacing="0.02em"
-              text-anchor="middle"
+              strokeWidth="3"
+              paintOrder="stroke"
+              fontFamily='"Bebas Neue", Impact, sans-serif'
+              fontSize="168"
+              fontWeight="400"
+              letterSpacing="0.02em"
+              textAnchor="middle"
             >
               INTERIOR
             </text>
@@ -315,13 +315,13 @@ export const OurSolutionSection = () => {
               y="604"
               fill="transparent"
               stroke="rgba(255,255,255,0.92)"
-              stroke-width="3"
-              paint-order="stroke"
-              font-family='"Bebas Neue", Impact, sans-serif'
-              font-size="168"
-              font-weight="400"
-              letter-spacing="0.02em"
-              text-anchor="middle"
+              strokeWidth="3"
+              paintOrder="stroke"
+              fontFamily='"Bebas Neue", Impact, sans-serif'
+              fontSize="168"
+              fontWeight="400"
+              letterSpacing="0.02em"
+              textAnchor="middle"
             >
               SOLUTIONS
             </text>
@@ -798,9 +798,9 @@ export const OurSolutionSection = () => {
                       viewBox="0 0 24 24"
                       fill="none"
                       stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                       className="lucide lucide-arrow-right h-4 w-4 text-white"
                       aria-hidden="true"
                     >
@@ -851,9 +851,9 @@ export const OurSolutionSection = () => {
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
-                    stroke-width="1.7"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeWidth="1.7"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                     className="lucide lucide-maximize h-[34px] w-[34px] text-primary"
                     aria-hidden="true"
                     color="rgb(87 183 192)"
@@ -905,9 +905,9 @@ export const OurSolutionSection = () => {
                       viewBox="0 0 24 24"
                       fill="none"
                       stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                       className="lucide lucide-arrow-right h-4 w-4 text-white"
                       aria-hidden="true"
                     >
@@ -937,9 +937,9 @@ export const OurSolutionSection = () => {
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
                 className="lucide lucide-arrow-right h-[18px] w-[18px]"
                 aria-hidden="true"
               >

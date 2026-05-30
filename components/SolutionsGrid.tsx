@@ -8,33 +8,35 @@ import {
   Refrigerator,
   Shirt,
 } from "lucide-react";
-import { useLanguage } from "../context/LanguageContext";
+import { useTranslations } from "next-intl";
+import { useLocaleContext } from "@/context/LocaleProvider";
 export function SolutionsGrid() {
-  const { t, dir } = useLanguage();
+  const t = useTranslations();
+  const { dir } = useLocaleContext();
   const solutions = [
     {
-      title: t("sol.grid.kitchens"),
+      title: t("sol.grid.kitchens.title"),
       description: t("sol.grid.kitchens.desc"),
       image:
         "https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=2070&auto=format&fit=crop",
       icon: Refrigerator,
     },
     {
-      title: t("sol.grid.closets"),
+      title: t("sol.grid.closets.title"),
       description: t("sol.grid.closets.desc"),
       image:
         "https://images.unsplash.com/photo-1558997519-83ea9252edf8?q=80&w=1974&auto=format&fit=crop",
       icon: Shirt,
     },
     {
-      title: t("sol.grid.doors"),
+      title: t("sol.grid.doors.title"),
       description: t("sol.grid.doors.desc"),
       image:
         "https://images.unsplash.com/photo-1534177616072-ef7dc120449d?q=80&w=2000&auto=format&fit=crop",
       icon: DoorOpen,
     },
     {
-      title: t("sol.grid.windows"),
+      title: t("sol.grid.windows.title"),
       description: t("sol.grid.windows.desc"),
       image:
         "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=2070&auto=format&fit=crop",

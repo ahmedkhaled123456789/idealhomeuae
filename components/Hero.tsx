@@ -1,9 +1,11 @@
 "use client";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
-import { useLanguage } from "../context/LanguageContext";
+import { useTranslations } from "next-intl";
+import { useLocaleContext } from "@/context/LocaleProvider";
 export function Hero() {
-  const { t, dir } = useLanguage();
+  const t = useTranslations();
+  const { dir } = useLocaleContext();
   const containerVariants = {
     hidden: {
       opacity: 0,
@@ -26,7 +28,7 @@ export function Hero() {
       y: 0,
       transition: {
         duration: 0.9,
-        ease: [0.22, 1, 0.36, 1],
+        ease: [0.22, 1, 0.36, 1] as [number, number, number, number],
       },
     },
   };

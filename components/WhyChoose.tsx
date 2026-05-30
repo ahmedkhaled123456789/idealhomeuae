@@ -2,9 +2,9 @@
 
 import { motion } from "framer-motion";
 import { CheckCircle2 } from "lucide-react";
-import { useLanguage } from "../context/LanguageContext";
+import { useTranslations } from "next-intl";
 export function WhyChoose() {
-  const { t } = useLanguage();
+  const t = useTranslations();
   const checks = [
     t("choose.check1"),
     t("choose.check2"),

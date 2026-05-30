@@ -1,14 +1,13 @@
-import React from "react";
-import "../hooks/useGsap";
-import { Hero } from "@/components/Hero";
-import { SolutionsGrid } from "@/components/SolutionsGrid";
-import { WhyDifficult } from "@/components/WhyDifficult";
+import { Contact } from "@/components/Contact";
 import { DesignBeforeSpending } from "@/components/DesignBeforeSpending";
 import { Gallery } from "@/components/Gallery";
-import { WhyChoose } from "@/components/WhyChoose";
-import { Testimonials } from "@/components/Testimonials";
-import { Contact } from "@/components/Contact";
+import { Hero } from "@/components/Hero";
 import { OurSolutionSection } from "@/components/OurSolutionSection";
+import { SolutionsGrid } from "@/components/SolutionsGrid";
+import { Testimonials } from "@/components/Testimonials";
+import { WhyChoose } from "@/components/WhyChoose";
+import { WhyDifficult } from "@/components/WhyDifficult";
+
 const page = () => {
   return (
     <div>

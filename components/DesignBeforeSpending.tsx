@@ -7,9 +7,12 @@ import {
   UploadCloud,
   Users,
 } from "lucide-react";
-import { useLanguage } from "../context/LanguageContext";
+import { useTranslations } from "next-intl";
+import { useLocaleContext } from "@/context/LocaleProvider";
+
 export function DesignBeforeSpending() {
-  const { t, dir } = useLanguage();
+  const t = useTranslations();
+  const { dir } = useLocaleContext();
   const cards = [
     {
       icon: UploadCloud,

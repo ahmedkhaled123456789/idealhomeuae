@@ -2,9 +2,11 @@
 
 import { motion } from "framer-motion";
 import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
-import { useLanguage } from "../context/LanguageContext";
+import { useTranslations } from "next-intl";
+import { useLocaleContext } from "@/context/LocaleProvider";
 export function Testimonials() {
-  const { t, dir } = useLanguage();
+  const t = useTranslations();
+  const { dir } = useLocaleContext();
   return (
     <section className="w-full bg-brand-dark py-20 px-4 md:px-10 lg:px-20">
       <div className="max-w-[1200px] mx-auto flex flex-col lg:flex-row gap-16 items-center">
