@@ -1,11 +1,8 @@
-"use client";
-import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
-import { useTranslations } from "next-intl";
-import { useLocaleContext } from "@/context/LocaleProvider";
-export function Hero() {
-  const t = useTranslations();
-  const { dir } = useLocaleContext();
+import { getTranslations } from "next-intl/server";
+import MotionElement from "./motion/MotionElement";
+export async function Hero() {
+  const t = await getTranslations();
   const containerVariants = {
     hidden: {
       opacity: 0,
@@ -35,7 +32,7 @@ export function Hero() {
   return (
     <section className="relative w-full min-h-[800px] h-screen flex items-center pt-20 overflow-hidden">
       {/* Background Image with Ken Burns */}
-      <motion.div
+      <MotionElement
         animate={{
           scale: [1, 1.06, 1],
         }}
@@ -56,7 +53,7 @@ export function Hero() {
 
       {/* Content */}
       <div className="relative z-20 max-w-[1440px] mx-auto w-full px-4 md:px-10 lg:px-20">
-        <motion.div
+        <MotionElement
           initial={{
             opacity: 0,
           }}
@@ -68,42 +65,46 @@ export function Hero() {
           }}
           className="max-w-[632px] bg-brand-black/80 backdrop-blur-md border border-brand-dark rounded-[20px] p-8 md:p-12"
         >
-          <motion.div
+          <MotionElement
             variants={containerVariants}
             initial="hidden"
             animate="visible"
           >
-            <motion.h1
+            <MotionElement
+              as="h1"
               variants={itemVariants}
               className="font-heading font-bold text-4xl md:text-5xl lg:text-[48px] leading-[1.2] text-white mb-2 whitespace-pre-line"
             >
               {t("hero.title1")}
-            </motion.h1>
-            <motion.h2
+            </MotionElement>
+            <MotionElement
+              as="h2"
               variants={itemVariants}
               className="font-heading font-bold text-4xl md:text-5xl lg:text-[48px] leading-[1.2] text-brand-teal mb-6"
             >
               {t("hero.title2")}
-            </motion.h2>
+            </MotionElement>
 
-            <motion.p
+            <MotionElement
+              as="p"
               variants={itemVariants}
               className="text-lg text-white/90 leading-relaxed mb-10"
             >
               {t("hero.subtitle")}
-            </motion.p>
+            </MotionElement>
 
-            <motion.button
+            <MotionElement
               variants={itemVariants}
+              as="button"
               className="flex items-center gap-3 bg-white hover:bg-gray-100 text-brand-dark px-8 py-4 rounded-xl font-bold text-lg transition-all group"
             >
               {t("hero.cta")}
               <ArrowUpRight
-                className={`w-5 h-5 transition-transform ${dir === "rtl" ? "rotate-[-90deg] group-hover:-translate-x-1 group-hover:-translate-y-1" : "group-hover:translate-x-1 group-hover:-translate-y-1"}`}
+                className={`w-5 h-5 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1`}
               />
-            </motion.button>
-          </motion.div>
-        </motion.div>
+            </MotionElement>
+          </MotionElement>
+        </MotionElement>
       </div>
     </section>
   );
