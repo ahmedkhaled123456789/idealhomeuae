@@ -10,7 +10,7 @@ export const OurSolutionSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const backgroundRef = useRef<HTMLDivElement>(null);
   const foregroundBgRef = useRef<HTMLDivElement>(null);
-  const strokeTextRef = useRef<HTMLHeadingElement>(null);
+  const strokeTextRef = useRef<SVGSVGElement>(null);
   const gradientOverlayRef = useRef<SVGSVGElement>(null);
   const maskGroupRef = useRef<SVGGElement>(null);
   const textGroupRef = useRef<SVGGElement>(null);
@@ -36,7 +36,6 @@ export const OurSolutionSection = () => {
       const introScale = 1.2;
       const exitScale = 5.2;
       const e = "720 450";
-      const introOffset = 2; // extra time for stroke text phase
 
       gsap.set(backgroundRef.current, {
         opacity: 1,
@@ -69,32 +68,32 @@ export const OurSolutionSection = () => {
         scrollTrigger: {
           trigger: t,
           start: "top top",
-          end: "+=420%",
+          end: "+=340%",
           pin: true,
           scrub: 0.55,
           anticipatePin: 1,
         },
       });
 
-      // Phase 0: Stroke text fades out
+      // Phase 0+1 linked: Stroke text disappears instantly while SVG scales in
       n.to(
         strokeTextRef.current,
-        { scale: 1.15, opacity: 0, duration: 2, ease: "power2.inOut" },
+        { opacity: 0, duration: 0.15, ease: "power2.out" },
         0,
       )
         // Fade out foreground background as stroke text disappears
         .to(
           foregroundBgRef.current,
           { opacity: 0, duration: 0.5, ease: "power2.out" },
-          introOffset - 0.3,
+          0,
         )
         // Fade in gradient overlay as stroke text disappears
         .to(
           gradientOverlayRef.current,
           { opacity: 1, duration: 0.5, ease: "power2.out" },
-          introOffset - 0.3,
+          0,
         )
-        // Phase 1: SVG mask scales in
+        // SVG mask scales in (linked with Phase 0)
         .to(
           [maskGroupRef.current, textGroupRef.current],
           {
@@ -103,12 +102,12 @@ export const OurSolutionSection = () => {
             duration: 2,
             ease: "power2.out",
           },
-          introOffset,
+          0,
         )
         .to(
           textGroupRef.current,
           { opacity: 1, duration: 0.45, ease: "power2.out" },
-          introOffset,
+          0,
         )
         // Phase 2: SVG mask scales out
         .to(
@@ -119,34 +118,34 @@ export const OurSolutionSection = () => {
             duration: 2.9,
             ease: "power2.inOut",
           },
-          introOffset + 1.55,
+          1.55,
         )
         .to(
           [maskGroupRef.current, textGroupRef.current],
           { opacity: 0, duration: 1.2, ease: "power1.out" },
-          introOffset + 3.65,
+          3.65,
         )
         .to(
           gradientOverlayRef.current,
           { opacity: 0, duration: 1.2, ease: "power1.out" },
-          introOffset + 3.85,
+          3.85,
         )
         // Phase 3: Solutions text appears
         .to(
           solutionsTextRef.current,
           { opacity: 1, y: 0, duration: 0.9, ease: "power2.out" },
-          introOffset + 4.45,
+          4.45,
         )
         .to(
           solutionsTextRef.current,
           { opacity: 0, y: -24, duration: 0.6, ease: "power2.in" },
-          introOffset + 5.65,
+          5.65,
         )
         // Phase 4: Dark gradient + blur
         .to(
           darkGradientBgRef.current,
           { opacity: 1, duration: 0.5, ease: "power2.out" },
-          introOffset + 6.05,
+          6.05,
         )
         .to(
           backgroundRef.current,
@@ -156,23 +155,23 @@ export const OurSolutionSection = () => {
             duration: 0.8,
             ease: "power2.out",
           },
-          introOffset + 6.05,
+          6.05,
         )
         // Phase 5: Header icon + title
         .to(
           headerIconRef.current,
           { opacity: 1, y: 0, duration: 0.35, ease: "power2.out" },
-          introOffset + 6.15,
+          6.15,
         )
         .to(
           headerTitleRef.current,
           { opacity: 1, y: 0, duration: 0.7, ease: "power2.out" },
-          introOffset + 6.2,
+          6.2,
         )
         .to(
           headerIconRef.current,
           { opacity: 0, y: -12, duration: 0.45, ease: "power2.in" },
-          introOffset + 6.62,
+          6.62,
         )
         // Phase 6: Cards animate in
         .to(
@@ -185,7 +184,7 @@ export const OurSolutionSection = () => {
             stagger: 0.11,
             ease: "power2.out",
           },
-          introOffset + 6.72,
+          6.72,
         );
     },
     { scope: sectionRef },
@@ -227,13 +226,60 @@ export const OurSolutionSection = () => {
           }}
         />
 
-        {/* Transparent stroke intro text */}
-        <h1
+        {/* Transparent stroke intro text (SVG) */}
+        <svg
           ref={strokeTextRef}
-          className="transparent-stroke pointer-events-none absolute inset-0 z-[5] flex items-center justify-center select-none"
+          className="pointer-events-none absolute inset-x-0 top-0 z-[5] h-dvh w-full select-none"
+          viewBox="0 0 1440 900"
+          preserveAspectRatio="xMidYMid slice"
+          aria-hidden="true"
         >
-          OUR <br /> INTERIOR <br /> SOLUTIONS
-        </h1>
+          <text
+            x="720"
+            y="296"
+            fill="transparent"
+            stroke="rgba(255,255,255,0.92)"
+            strokeWidth="3"
+            paintOrder="stroke"
+            fontFamily='"Bebas Neue", Impact, sans-serif'
+            fontSize="168"
+            fontWeight="400"
+            letterSpacing="0.02em"
+            textAnchor="middle"
+          >
+            OUR
+          </text>
+          <text
+            x="720"
+            y="450"
+            fill="transparent"
+            stroke="rgba(255,255,255,0.92)"
+            strokeWidth="3"
+            paintOrder="stroke"
+            fontFamily='"Bebas Neue", Impact, sans-serif'
+            fontSize="168"
+            fontWeight="400"
+            letterSpacing="0.02em"
+            textAnchor="middle"
+          >
+            INTERIOR
+          </text>
+          <text
+            x="720"
+            y="604"
+            fill="transparent"
+            stroke="rgba(255,255,255,0.92)"
+            strokeWidth="3"
+            paintOrder="stroke"
+            fontFamily='"Bebas Neue", Impact, sans-serif'
+            fontSize="168"
+            fontWeight="400"
+            letterSpacing="0.02em"
+            textAnchor="middle"
+          >
+            SOLUTIONS
+          </text>
+        </svg>
 
         <svg
           ref={gradientOverlayRef}
